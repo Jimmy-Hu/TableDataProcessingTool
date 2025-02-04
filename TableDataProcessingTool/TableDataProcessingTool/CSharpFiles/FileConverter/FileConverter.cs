@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TableDataProcessingTool.CSharpFiles
 {
-	public class FileConverter
-	{
-		public FileConverter(string Filename, string OutputFolder)
-		{
-			string OutputFilename =
-				OutputFolder +
-				"\\" + System.IO.Path.GetFileNameWithoutExtension(Filename) + ".sheets";
+    public class FileConverter
+    {
+        public FileConverter(string Filename, string OutputFolder)
+        {
+            string OutputFilename =
+                OutputFolder +
+                "\\" + System.IO.Path.GetFileNameWithoutExtension(Filename) + ".sheets";
 
-			new CSharpFiles.SheetFileStructure(Filename).Save(OutputFilename);
-		}
-	}
+            new CSharpFiles.SheetFileStructure(Filename).Save(OutputFilename);
+        }
+    }
 }
