@@ -32,13 +32,9 @@ namespace TableDataProcessingTool.WinForms.SelectedCellsInfo
             decimal sum = 0;
             foreach (DataGridViewCell cell in input)
             {
-                try
+                if (decimal.TryParse(cell.Value.ToString(), out decimal result))
                 {
-                    sum += decimal.Parse(cell.Value.ToString());
-                }
-                catch (Exception ex)
-                {
-
+                    sum += result;
                 }
             }
             return sum;
@@ -83,24 +79,55 @@ namespace TableDataProcessingTool.WinForms.SelectedCellsInfo
             List<decimal> numbers = new List<decimal>();
             foreach (DataGridViewCell cell in input)
             {
-                try
+                if (decimal.TryParse(cell.Value.ToString(), out decimal result))
                 {
-                    numbers.Add(decimal.Parse(cell.Value.ToString()));
-                }
-                catch (Exception ex)
-                {
-
+                    numbers.Add(result);
                 }
             }
-            return new Tuple<decimal, decimal>(numbers.Min(), numbers.Max());
+            if (numbers.Count > 0)
+            {
+                return new Tuple<decimal, decimal>(numbers.Min(), numbers.Max());
+            }
+            return null;
+        }
+
+        private double? calculateStandardDeviation(DataGridViewSelectedCellCollection input)
+        {
+            List<decimal> numbers = new List<decimal>();
+            foreach (DataGridViewCell cell in input)
+            {
+                if (decimal.TryParse(cell.Value.ToString(), out decimal result))
+                {
+                    numbers.Add(result);
+                }
+            }
+            if (numbers.Count > 0)
+            {
+                return StandardDeviation(numbers);
+            }
+            return null;
         }
 
         //  StandardDeviation method
-        public static double StandardDeviation(double[] doubles)
+        private static double StandardDeviation(double[] doubles)
         {
             double average = doubles.Average();
             double sumOfSquaresOfDifferences = doubles.Select(val => (val - average) * (val - average)).Sum();
             double sd = Math.Sqrt(sumOfSquaresOfDifferences / doubles.Length);
+            return sd;
+        }
+
+        //  StandardDeviation method
+        private static double StandardDeviation(IEnumerable<double> doubles)
+        {
+            return StandardDeviation(doubles.ToArray());
+        }
+
+        private static double StandardDeviation(IEnumerable<decimal> decimals)
+        {
+            decimal average = decimals.Average();
+            decimal sumOfSquaresOfDifferences = decimals.Select(val => (val - average) * (val - average)).Sum();
+            double sd = Math.Sqrt((double)sumOfSquaresOfDifferences / decimals.Count());
             return sd;
         }
 
