@@ -27,34 +27,33 @@ namespace TableDataProcessingTool.WinForms.SelectedCellsInfo
             setTag(this);
         }
 
-        private decimal calculateSum(DataGridViewSelectedCellCollection input)
+        //  Reference: https://codereview.stackexchange.com/a/295313/231235
+        private static List<double> CellsToNumbers(DataGridViewSelectedCellCollection cells)
         {
-            decimal sum = 0;
-            foreach (DataGridViewCell cell in input)
+            List<double> numbers = new List<double>();
+            foreach (DataGridViewCell cell in cells)
             {
-                if (decimal.TryParse(cell.Value.ToString(), out decimal result))
+                if (Double.TryParse(cell.Value.ToString(), out double result))
                 {
-                    sum += result;
+                    numbers.Add(result);
                 }
             }
-            return sum;
+            return numbers;
         }
 
-        private decimal calculateMax(DataGridViewSelectedCellCollection input)
+        private double calculateSum(DataGridViewSelectedCellCollection input)
         {
-            List<decimal> numbers = new List<decimal>();
-            foreach (DataGridViewCell cell in input)
-            {
-                try
-                {
-                    numbers.Add(decimal.Parse(cell.Value.ToString()));
-                }
-                catch (Exception ex)
-                {
+            return CellsToNumbers(input).Sum();
+        }
 
-                }
+        private double? calculateMax(DataGridViewSelectedCellCollection input)
+        {
+            var numbers = CellsToNumbers(input);
+            if (numbers.Count > 0)
+            {
+                return numbers.Max();
             }
-            return numbers.Max();
+            return null;
         }
 
         private decimal calculateMin(DataGridViewSelectedCellCollection input)
