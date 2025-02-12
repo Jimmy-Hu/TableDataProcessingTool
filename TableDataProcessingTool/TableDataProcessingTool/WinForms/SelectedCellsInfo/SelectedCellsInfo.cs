@@ -56,21 +56,14 @@ namespace TableDataProcessingTool.WinForms.SelectedCellsInfo
             return null;
         }
 
-        private decimal calculateMin(DataGridViewSelectedCellCollection input)
+        private double? calculateMin(DataGridViewSelectedCellCollection input)
         {
-            List<decimal> numbers = new List<decimal>();
-            foreach (DataGridViewCell cell in input)
+            var numbers = CellsToNumbers(input);
+            if (numbers.Count > 0)
             {
-                try
-                {
-                    numbers.Add(decimal.Parse(cell.Value.ToString()));
-                }
-                catch (Exception ex)
-                {
-
-                }
+                return numbers.Min();
             }
-            return numbers.Min();
+            return null;
         }
 
         private Tuple<decimal, decimal> calculateMinMax(DataGridViewSelectedCellCollection input)
