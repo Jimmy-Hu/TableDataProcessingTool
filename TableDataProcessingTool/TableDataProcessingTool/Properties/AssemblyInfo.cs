@@ -7,3 +7,4 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("TableDataProcessingTool")]
 [assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
