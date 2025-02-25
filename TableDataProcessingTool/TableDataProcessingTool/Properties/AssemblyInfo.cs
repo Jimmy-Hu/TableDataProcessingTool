@@ -8,3 +8,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TableDataProcessingTool")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
