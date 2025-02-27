@@ -10,3 +10,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TableDataProcessingTool")]
+[assembly: AssemblyCopyright("Copyright ©  2025")]
