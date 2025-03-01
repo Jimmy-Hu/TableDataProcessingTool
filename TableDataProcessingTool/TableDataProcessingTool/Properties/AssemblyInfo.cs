@@ -12,3 +12,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("TableDataProcessingTool")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
