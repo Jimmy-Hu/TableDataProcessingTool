@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35716.79 d17.13
+VisualStudioVersion = 17.13.35716.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDataProcessingTool", "TableDataProcessingTool\TableDataProcessingTool.csproj", "{634AC51E-619B-43FA-988F-B2835D1772B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDataProcessingTool2", "TableDataProcessingTool2\TableDataProcessingTool2.csproj", "{9F06751D-3034-4146-ABD0-C63C74AB36F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{634AC51E-619B-43FA-988F-B2835D1772B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{634AC51E-619B-43FA-988F-B2835D1772B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{634AC51E-619B-43FA-988F-B2835D1772B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F06751D-3034-4146-ABD0-C63C74AB36F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F06751D-3034-4146-ABD0-C63C74AB36F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F06751D-3034-4146-ABD0-C63C74AB36F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F06751D-3034-4146-ABD0-C63C74AB36F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
