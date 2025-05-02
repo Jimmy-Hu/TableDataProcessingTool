@@ -78,7 +78,7 @@ namespace TableDataProcessingTool2.CSharpFiles
             return result;
         }
 
-        public T Deserialize<T>(byte[] message)
+        public static T Deserialize<T>(byte[] message)
         {
             T result;
             using (var stream = new MemoryStream(message))
