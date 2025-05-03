@@ -66,33 +66,19 @@ namespace TableDataProcessingTool.WinForms.SelectedCellsInfo
             return null;
         }
 
-        private Tuple<decimal, decimal> calculateMinMax(DataGridViewSelectedCellCollection input)
+        private Tuple<double, double> calculateMinMax(DataGridViewSelectedCellCollection input)
         {
-            List<decimal> numbers = new List<decimal>();
-            foreach (DataGridViewCell cell in input)
-            {
-                if (decimal.TryParse(cell.Value.ToString(), out decimal result))
-                {
-                    numbers.Add(result);
-                }
-            }
+            var numbers = CellsToNumbers(input);
             if (numbers.Count > 0)
             {
-                return new Tuple<decimal, decimal>(numbers.Min(), numbers.Max());
+                return new Tuple<double, double>(numbers.Min(), numbers.Max());
             }
             return null;
         }
 
         private double? calculateStandardDeviation(DataGridViewSelectedCellCollection input)
         {
-            List<decimal> numbers = new List<decimal>();
-            foreach (DataGridViewCell cell in input)
-            {
-                if (decimal.TryParse(cell.Value.ToString(), out decimal result))
-                {
-                    numbers.Add(result);
-                }
-            }
+            List<double> numbers = CellsToNumbers(input);
             if (numbers.Count > 0)
             {
                 return StandardDeviation(numbers);
