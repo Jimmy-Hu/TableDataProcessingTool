@@ -21,7 +21,10 @@ namespace TableDataProcessingTool2
             label_cellMin.Text = "Min: " + minMax.Item1.ToString();
             label_cellMax.Text = "Max: " + minMax.Item2.ToString();
 
-
+            // Automatic arrange element size on window
+            window_width = this.Width;
+            window_height = this.Height;
+            setTag(this);
         }
 
         //  Reference: https://codereview.stackexchange.com/a/295313/231235
