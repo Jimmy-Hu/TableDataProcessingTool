@@ -14,6 +14,7 @@ namespace TableDataProcessingTool2
         public Main()
         {
             InitializeComponent();
+
             var titleItem_File = new System.Windows.Forms.ToolStripMenuItem()
             {
                 Name = "File",
@@ -63,6 +64,16 @@ namespace TableDataProcessingTool2
                     //    Add items to listBox
                     listBox_FileList.Items.Add(fileName);
                 }
+            });
+            var titleItem_File_ExportToExcel = new System.Windows.Forms.ToolStripMenuItem()
+            {
+                Name = "Export to Excel",
+                Text = "Export to Excel"
+            };
+            titleItem_File.DropDownItems.Add(titleItem_File_ExportToExcel);
+            titleItem_File_ExportToExcel.Click += new EventHandler(delegate (Object o, EventArgs arg)        //  Export to Excel option
+            {
+                ExportToExcelFile();
             });
 
             var titleItem_Window = new System.Windows.Forms.ToolStripMenuItem()
@@ -125,6 +136,20 @@ namespace TableDataProcessingTool2
             openFileDialog1.Multiselect = true;
             openFileDialog1.ShowDialog();
             return openFileDialog1.FileNames;
+        }
+
+        private void ExportToExcelFile()
+        {
+            //  Reference: https://stackoverflow.com/a/7416724/6667035
+            SaveFileDialog _SD = new SaveFileDialog();
+            _SD.Filter = "Excel File|*.xlsx";
+            _SD.FileName = "Filename" + DateTime.Now.ToString("yyyyMMdd");
+            _SD.Title = "Save As";
+            if (_SD.ShowDialog() == DialogResult.OK)
+            {
+                MainBlockStructure.WriteExcel(_SD.FileName);
+                MessageBox.Show($"Save to {_SD.FileName} done.");
+            }
         }
 
         #region -- Automatic arrange element size on window --
@@ -219,8 +244,8 @@ namespace TableDataProcessingTool2
 
         private void button_SelectedCellsInfo_Click(object sender, EventArgs e)
         {
-            //SelectedCellsInfo selectedCellsInfo = new SelectedCellsInfo(dataGridView_Main.SelectedCells);
-            //selectedCellsInfo.Show();
+            SelectedCellsInfo selectedCellsInfo = new SelectedCellsInfo(dataGridView_Main.SelectedCells);
+            selectedCellsInfo.Show();
         }
     }
 }
