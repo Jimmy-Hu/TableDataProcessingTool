@@ -27,4 +27,5 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="WinForms\FileConverter.cs">
 </Project>
