@@ -28,4 +28,5 @@
 
   <ItemGroup>
     <Compile Update="WinForms\FileConverter.cs">
+      <SubType>Form</SubType>
 </Project>
