@@ -30,6 +30,14 @@
         {
             menuStrip1 = new MenuStrip();
             groupBox_filelist = new GroupBox();
+            listBox_FileList = new ListBox();
+            button_SelectedCellsInfo = new Button();
+            SheetSelectorComboBox = new ComboBox();
+            dataGridView_Main = new DataGridView();
+            label_selectedCellCount = new Label();
+            label_cellSum = new Label();
+            groupBox_filelist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Main).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
