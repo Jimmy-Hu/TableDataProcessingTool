@@ -50,6 +50,7 @@
             // 
             // groupBox_filelist
             // 
+            groupBox_filelist.Controls.Add(listBox_FileList);
             groupBox_filelist.Location = new Point(12, 27);
             groupBox_filelist.Name = "groupBox_filelist";
             groupBox_filelist.Size = new Size(197, 411);
