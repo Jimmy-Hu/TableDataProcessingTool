@@ -2,5 +2,8 @@
 {
     partial class FileConverter
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
     }
 }
