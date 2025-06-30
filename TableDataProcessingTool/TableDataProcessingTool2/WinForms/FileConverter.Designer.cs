@@ -31,5 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.ProcessingInfo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
     }
 }
