@@ -33,5 +33,6 @@
             this.ProcessingInfo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ConvertButton = new System.Windows.Forms.Button();
+            this.BrowseFileButton = new System.Windows.Forms.Button();
     }
 }
