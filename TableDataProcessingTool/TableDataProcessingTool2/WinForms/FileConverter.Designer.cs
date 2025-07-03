@@ -34,5 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ConvertButton = new System.Windows.Forms.Button();
             this.BrowseFileButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
     }
 }
