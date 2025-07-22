@@ -6,4 +6,5 @@ using System.Threading.Tasks;
 
 namespace TableDataProcessingTool2.CSharpFiles
 {
+    public static class SettingsItems
 }
