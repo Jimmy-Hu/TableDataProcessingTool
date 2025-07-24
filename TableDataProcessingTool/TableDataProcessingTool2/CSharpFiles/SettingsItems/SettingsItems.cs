@@ -8,4 +8,5 @@ namespace TableDataProcessingTool2.CSharpFiles
 {
     public static class SettingsItems
     {
+    }
 }
