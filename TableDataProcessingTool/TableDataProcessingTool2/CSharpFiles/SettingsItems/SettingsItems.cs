@@ -9,5 +9,6 @@ namespace TableDataProcessingTool2.CSharpFiles
     public static class SettingsItems
     {
         public static Color backcolor = Color.White;
+        public static Bitmap backgroundImage = null;
     }
 }
