@@ -10,5 +10,6 @@ namespace TableDataProcessingTool2.CSharpFiles
     {
         public static Color backcolor = Color.White;
         public static Bitmap backgroundImage = null;
+        public static Font font = null;
     }
 }
