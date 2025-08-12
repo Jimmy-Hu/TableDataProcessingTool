@@ -7,4 +7,5 @@ using System.Threading.Tasks;
 namespace TableDataProcessingTool2.CSharpFiles
 {
     public class FileConverter
+    {
 }
