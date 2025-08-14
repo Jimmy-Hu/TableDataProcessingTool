@@ -9,4 +9,5 @@ namespace TableDataProcessingTool2.CSharpFiles
     public class FileConverter
     {
         public FileConverter(string Filename, string OutputFolder)
+        {
 }
