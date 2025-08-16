@@ -11,4 +11,5 @@ namespace TableDataProcessingTool2.CSharpFiles
         public FileConverter(string Filename, string OutputFolder)
         {
             string OutputFilename =
+                OutputFolder +
 }
