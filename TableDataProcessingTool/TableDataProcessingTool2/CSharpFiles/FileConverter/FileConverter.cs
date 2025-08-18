@@ -13,4 +13,5 @@ namespace TableDataProcessingTool2.CSharpFiles
             string OutputFilename =
                 OutputFolder +
                 "\\" + System.IO.Path.GetFileNameWithoutExtension(Filename) + ".sheets2";
+            //  Reference: https://stackoverflow.com/a/58074654/6667035
 }
