@@ -17,4 +17,5 @@ namespace TableDataProcessingTool2.CSharpFiles
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             new CSharpFiles.SheetFileStructure(Filename).Save(OutputFilename);
         }
+    }
 }
