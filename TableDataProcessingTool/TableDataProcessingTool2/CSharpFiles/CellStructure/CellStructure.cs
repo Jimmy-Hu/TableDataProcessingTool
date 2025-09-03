@@ -9,3 +9,4 @@ namespace TableDataProcessingTool2.CSharpFiles
 {
     [Serializable]
     [ProtoContract]
+    public class CellStructure : BaseClass
