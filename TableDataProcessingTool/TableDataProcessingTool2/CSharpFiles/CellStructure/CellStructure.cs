@@ -12,3 +12,4 @@ namespace TableDataProcessingTool2.CSharpFiles
     public class CellStructure : BaseClass
     {
         [ProtoMember(1)]
+        private string StringData;
