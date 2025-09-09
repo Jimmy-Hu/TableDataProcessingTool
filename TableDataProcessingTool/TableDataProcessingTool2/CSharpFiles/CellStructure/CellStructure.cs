@@ -15,3 +15,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         private string StringData;
         [ProtoMember(2)]
         private DateTime? dateTime;
+        [ProtoMember(3)]
