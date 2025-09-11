@@ -17,3 +17,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         private DateTime? dateTime;
         [ProtoMember(3)]
         private int? IntNumber;
+        [ProtoMember(4)]
