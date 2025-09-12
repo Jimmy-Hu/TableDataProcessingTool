@@ -18,3 +18,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         [ProtoMember(3)]
         private int? IntNumber;
         [ProtoMember(4)]
+        private float? FloatNumber;
