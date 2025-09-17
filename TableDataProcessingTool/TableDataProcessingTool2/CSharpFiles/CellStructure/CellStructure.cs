@@ -23,3 +23,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         private double? DoubleNumber;
         [ProtoMember(6)]
         private decimal? DecimalNumber;
+        [ProtoMember(7)]
