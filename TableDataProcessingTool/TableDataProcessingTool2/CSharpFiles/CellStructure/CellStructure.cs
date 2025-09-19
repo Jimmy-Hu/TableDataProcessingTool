@@ -25,3 +25,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         private decimal? DecimalNumber;
         [ProtoMember(7)]
         private List<CellStructure> SplitResult;
+        [ProtoMember(8)]
