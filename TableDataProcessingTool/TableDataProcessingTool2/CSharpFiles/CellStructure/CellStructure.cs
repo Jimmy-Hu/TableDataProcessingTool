@@ -27,3 +27,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         private List<CellStructure> SplitResult;
         [ProtoMember(8)]
         private bool UseBackGroundColor = false;
+        [ProtoMember(9)]
