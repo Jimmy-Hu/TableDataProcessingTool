@@ -28,3 +28,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         [ProtoMember(8)]
         private bool UseBackGroundColor = false;
         [ProtoMember(9)]
+        private int BackGroundColorARGB;
