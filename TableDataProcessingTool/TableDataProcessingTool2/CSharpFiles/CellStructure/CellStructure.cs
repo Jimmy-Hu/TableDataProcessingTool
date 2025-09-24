@@ -30,3 +30,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         [ProtoMember(9)]
         private int BackGroundColorARGB;
 
+        [ProtoMember(10)]
