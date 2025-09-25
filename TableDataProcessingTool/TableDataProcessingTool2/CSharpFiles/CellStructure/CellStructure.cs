@@ -31,3 +31,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         private int BackGroundColorARGB;
 
         [ProtoMember(10)]
+        private List<string> Labels;
