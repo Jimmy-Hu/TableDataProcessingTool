@@ -33,3 +33,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         [ProtoMember(10)]
         private List<string> Labels;
 
+        public CellStructure()
