@@ -40,3 +40,4 @@ namespace TableDataProcessingTool2.CSharpFiles
 
         public CellStructure(string InputString)
         {
+            this.StringData = InputString;
