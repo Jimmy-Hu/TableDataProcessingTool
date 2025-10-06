@@ -42,3 +42,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         {
             this.StringData = InputString;
 
+            //    Try to convert to DateTime structure
