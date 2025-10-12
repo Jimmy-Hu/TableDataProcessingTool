@@ -46,3 +46,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             if (DateTime.TryParse(InputString, out DateTime DateTimeParsingResult))
             {
                 this.dateTime = DateTimeParsingResult;
+            }
