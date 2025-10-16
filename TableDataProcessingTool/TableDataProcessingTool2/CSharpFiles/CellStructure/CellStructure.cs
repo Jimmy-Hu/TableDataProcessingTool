@@ -50,3 +50,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             else
             {
                 this.dateTime = null;
+            }
