@@ -51,3 +51,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.dateTime = null;
             }
+            //    Try to convert to int number
