@@ -54,3 +54,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             //    Try to convert to int number
             if (int.TryParse(InputString, out int IntNumberParsingResult))
             {
+                this.IntNumber = IntNumberParsingResult;
