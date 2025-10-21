@@ -55,3 +55,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             if (int.TryParse(InputString, out int IntNumberParsingResult))
             {
                 this.IntNumber = IntNumberParsingResult;
+            }
