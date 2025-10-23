@@ -57,3 +57,4 @@ namespace TableDataProcessingTool2.CSharpFiles
                 this.IntNumber = IntNumberParsingResult;
             }
             else
+            {
