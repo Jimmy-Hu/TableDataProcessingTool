@@ -60,3 +60,5 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.IntNumber = null;
             }
+            //    Try to convert to float number
+            if (float.TryParse(InputString, out float FloatNumberParsingResult))
