@@ -62,3 +62,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             //    Try to convert to float number
             if (float.TryParse(InputString, out float FloatNumberParsingResult))
+            {
