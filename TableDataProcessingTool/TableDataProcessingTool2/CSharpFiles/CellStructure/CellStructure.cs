@@ -69,3 +69,8 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.FloatNumber = null;
             }
+            //    Try to convert to double number
+            if (double.TryParse(InputString, out double DoubleNumberParsingResult))
+            {
+                this.DoubleNumber = DoubleNumberParsingResult;
+            }
