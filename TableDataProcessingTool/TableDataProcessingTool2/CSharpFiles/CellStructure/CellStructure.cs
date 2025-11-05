@@ -74,3 +74,7 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.DoubleNumber = DoubleNumberParsingResult;
             }
+            else
+            {
+                this.DoubleNumber = null;
+            }
