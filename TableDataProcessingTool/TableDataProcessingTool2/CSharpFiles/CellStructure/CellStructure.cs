@@ -81,3 +81,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             //    Try to convert to decimal number
             if (decimal.TryParse(InputString, out decimal DecimalNumberParsingResult))
             {
+                this.DecimalNumber = DecimalNumberParsingResult;
