@@ -84,3 +84,4 @@ namespace TableDataProcessingTool2.CSharpFiles
                 this.DecimalNumber = DecimalNumberParsingResult;
             }
             else
+            {
