@@ -89,3 +89,5 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             SplitResult = new List<CellStructure>();
             Labels = new List<string>();
+        }
+
