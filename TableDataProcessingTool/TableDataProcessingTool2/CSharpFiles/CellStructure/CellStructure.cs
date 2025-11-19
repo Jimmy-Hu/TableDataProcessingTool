@@ -93,3 +93,4 @@ namespace TableDataProcessingTool2.CSharpFiles
 
         public CellStructure(string InputString, params char[] Separators)
         {
+            this.StringData = InputString;
