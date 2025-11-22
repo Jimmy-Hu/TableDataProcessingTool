@@ -97,3 +97,4 @@ namespace TableDataProcessingTool2.CSharpFiles
 
             //    Try to convert to DateTime structure
             DateTime DateTimeParsingResult;
+            if (DateTime.TryParse(InputString, out DateTimeParsingResult))
