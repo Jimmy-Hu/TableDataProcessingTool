@@ -107,3 +107,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             //    Try to convert to int number
             int IntNumberParsingResult;
+            if (int.TryParse(InputString, out IntNumberParsingResult))
