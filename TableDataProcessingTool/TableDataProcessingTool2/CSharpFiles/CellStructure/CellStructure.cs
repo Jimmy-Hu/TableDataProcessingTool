@@ -109,3 +109,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             int IntNumberParsingResult;
             if (int.TryParse(InputString, out IntNumberParsingResult))
             {
+                this.IntNumber = IntNumberParsingResult;
