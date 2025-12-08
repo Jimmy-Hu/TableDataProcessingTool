@@ -113,3 +113,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             else
             {
+                this.IntNumber = null;
