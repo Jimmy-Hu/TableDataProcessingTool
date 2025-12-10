@@ -115,3 +115,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.IntNumber = null;
             }
+            //    Try to convert to float number
