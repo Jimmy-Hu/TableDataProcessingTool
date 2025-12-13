@@ -118,3 +118,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             //    Try to convert to float number
             float FloatNumberParsingResult;
             if (float.TryParse(InputString, out FloatNumberParsingResult))
+            {
