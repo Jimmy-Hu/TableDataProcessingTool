@@ -120,3 +120,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             if (float.TryParse(InputString, out FloatNumberParsingResult))
             {
                 this.FloatNumber = FloatNumberParsingResult;
+            }
