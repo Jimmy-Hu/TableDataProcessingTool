@@ -121,3 +121,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.FloatNumber = FloatNumberParsingResult;
             }
+            else
