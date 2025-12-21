@@ -126,3 +126,4 @@ namespace TableDataProcessingTool2.CSharpFiles
                 this.FloatNumber = null;
             }
             //    Try to convert to double number
+            double DoubleNumberParsingResult;
