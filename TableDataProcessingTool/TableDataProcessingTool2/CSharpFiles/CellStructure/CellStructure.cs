@@ -128,3 +128,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             //    Try to convert to double number
             double DoubleNumberParsingResult;
             if (double.TryParse(InputString, out DoubleNumberParsingResult))
+            {
