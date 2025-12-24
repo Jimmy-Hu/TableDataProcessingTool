@@ -129,3 +129,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             double DoubleNumberParsingResult;
             if (double.TryParse(InputString, out DoubleNumberParsingResult))
             {
+                this.DoubleNumber = DoubleNumberParsingResult;
