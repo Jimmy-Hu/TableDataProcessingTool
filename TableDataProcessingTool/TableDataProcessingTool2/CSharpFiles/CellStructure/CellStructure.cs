@@ -131,3 +131,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.DoubleNumber = DoubleNumberParsingResult;
             }
+            else
