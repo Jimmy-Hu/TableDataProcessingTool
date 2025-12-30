@@ -135,3 +135,5 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.DoubleNumber = null;
             }
+            //    Try to convert to decimal number
+            if (decimal.TryParse(InputString, out decimal DecimalNumberParsingResult))
