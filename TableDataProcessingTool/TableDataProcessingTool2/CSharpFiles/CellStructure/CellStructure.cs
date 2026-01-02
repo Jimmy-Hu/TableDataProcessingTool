@@ -139,3 +139,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             if (decimal.TryParse(InputString, out decimal DecimalNumberParsingResult))
             {
                 this.DecimalNumber = DecimalNumberParsingResult;
+            }
