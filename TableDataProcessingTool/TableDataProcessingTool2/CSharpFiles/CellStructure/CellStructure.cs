@@ -142,3 +142,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             else
             {
+                this.DecimalNumber = null;
