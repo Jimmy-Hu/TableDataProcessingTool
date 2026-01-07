@@ -144,3 +144,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.DecimalNumber = null;
             }
+            SplitResult = new List<CellStructure>();
