@@ -147,3 +147,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             SplitResult = new List<CellStructure>();
             foreach (var item in InputString.Split(Separators)
                 .Select((Value, Index) => new { Index, Value }))
+            {
