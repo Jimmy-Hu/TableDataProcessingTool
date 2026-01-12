@@ -149,3 +149,4 @@ namespace TableDataProcessingTool2.CSharpFiles
                 .Select((Value, Index) => new { Index, Value }))
             {
                 SplitResult.Add(new CellStructure(item.Value));
+            }
