@@ -151,3 +151,4 @@ namespace TableDataProcessingTool2.CSharpFiles
                 SplitResult.Add(new CellStructure(item.Value));
             }
             Labels = new List<string>();
+        }
