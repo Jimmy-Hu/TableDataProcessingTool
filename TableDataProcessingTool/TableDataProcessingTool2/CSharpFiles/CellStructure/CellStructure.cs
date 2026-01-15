@@ -152,3 +152,4 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             Labels = new List<string>();
         }
+        public CellStructure(string InputString, string RegexPatternInput)
