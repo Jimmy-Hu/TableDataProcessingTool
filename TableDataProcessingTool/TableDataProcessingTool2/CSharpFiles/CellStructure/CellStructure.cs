@@ -154,3 +154,4 @@ namespace TableDataProcessingTool2.CSharpFiles
         }
         public CellStructure(string InputString, string RegexPatternInput)
         {
+            string StringForProcessing = System.Text.RegularExpressions.Regex.Replace(InputString, RegexPatternInput, String.Empty);
