@@ -157,3 +157,6 @@ namespace TableDataProcessingTool2.CSharpFiles
             string StringForProcessing = System.Text.RegularExpressions.Regex.Replace(InputString, RegexPatternInput, String.Empty);
 
             this.StringData = StringForProcessing;
+
+            //    Try to convert to DateTime structure
+            if (DateTime.TryParse(StringForProcessing, out DateTime DateTimeParsingResult))
