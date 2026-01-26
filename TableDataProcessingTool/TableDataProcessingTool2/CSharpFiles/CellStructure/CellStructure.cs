@@ -167,3 +167,8 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 this.dateTime = null;
             }
+            //    Try to convert to int number
+            if (int.TryParse(StringForProcessing, out int IntNumberParsingResult))
+            {
+                this.IntNumber = IntNumberParsingResult;
+            }
