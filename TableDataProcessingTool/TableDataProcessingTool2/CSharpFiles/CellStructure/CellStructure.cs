@@ -174,3 +174,167 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
             else
             {
+                this.IntNumber = null;
+            }
+            //    Try to convert to float number
+            if (float.TryParse(StringForProcessing, out float FloatNumberParsingResult))
+            {
+                this.FloatNumber = FloatNumberParsingResult;
+            }
+            else
+            {
+                this.FloatNumber = null;
+            }
+            //    Try to convert to double number
+            if (double.TryParse(StringForProcessing, out double DoubleNumberParsingResult))
+            {
+                this.DoubleNumber = DoubleNumberParsingResult;
+            }
+            else
+            {
+                this.DoubleNumber = null;
+            }
+            //    Try to convert to decimal number
+            if (decimal.TryParse(InputString, out decimal DecimalNumberParsingResult))
+            {
+                this.DecimalNumber = DecimalNumberParsingResult;
+            }
+            else
+            {
+                this.DecimalNumber = null;
+            }
+            SplitResult = new List<CellStructure>();
+            Labels = new List<string>();
+        }
+
+        public CellStructure AddLabel(string NewLabel)
+        {
+            this.Labels.Add(NewLabel);
+            return this;
+        }
+
+        public CellStructure DeepClone()
+        {
+            return (CellStructure)DeepClone(this);
+        }
+
+        public string GetString()
+        {
+            return this.StringData;
+        }
+        public DateTime? GetDateTime()
+        {
+            return this.dateTime;
+        }
+        public int? GetInt()
+        {
+            return this.IntNumber;
+        }
+        public float? GetFloat()
+        {
+            return this.FloatNumber;
+        }
+        public double? GetDouble()
+        {
+            return this.DoubleNumber;
+        }
+
+        public decimal? GetDecimal()
+        {
+            return this.DecimalNumber;
+        }
+
+        public List<CellStructure> GetSplitResult()
+        {
+            return this.SplitResult;
+        }
+
+        public bool IsLabelContains(string InputLabel)
+        {
+            foreach (var EachLabel in this.Labels)
+            {
+                if (EachLabel.Contains(InputLabel).Equals(true))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsLabelExist(string InputLabel)
+        {
+            foreach (var EachLabel in this.Labels)
+            {
+                if (InputLabel.Equals(EachLabel).Equals(true))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsNullOrEmpty()
+        {
+            return String.IsNullOrEmpty(this.GetString());
+        }
+
+        public CellStructure RemoveLabelsContains(string InputLabel)
+        {
+            List<string> NewLabels = new List<string>();
+            for (int LoopNumber = 0; LoopNumber < this.Labels.Count; LoopNumber++)
+            {
+                if (this.Labels[LoopNumber].Contains(InputLabel).Equals(false))
+                {
+                    NewLabels.Add(this.Labels[LoopNumber]);
+                }
+            }
+            this.Labels = NewLabels;
+            return this;
+        }
+
+        public CellStructure RemoveLabel(string InputLabel)
+        {
+            for (int LoopNumber = 0; LoopNumber < this.Labels.Count; LoopNumber++)
+            {
+                this.Labels.Remove(InputLabel);
+            }
+            return this;
+        }
+
+        public CellStructure SetBackGroundColor(ClosedXML.Excel.XLColor NewBackGroundColor)
+        {
+            this.UseBackGroundColor = true;
+            this.BackGroundColorARGB = NewBackGroundColor.Color.ToArgb();
+            return this;
+        }
+
+        public CellStructure SetBackGroundColor(System.Drawing.Color NewBackGroundColor)
+        {
+            this.UseBackGroundColor = true;
+            this.BackGroundColorARGB = NewBackGroundColor.ToArgb();
+            return this;
+        }
+
+        public bool IsBackGroundColorUsed()
+        {
+            return this.UseBackGroundColor;
+        }
+
+        public ClosedXML.Excel.XLColor GetBackGroundColor()
+        {
+            ClosedXML.Excel.XLColor ReturnValue = ClosedXML.Excel.XLColor.FromArgb(this.BackGroundColorARGB);
+            return ReturnValue;
+        }
+
+        public override bool Equals(object obj)
+        {
+            CellStructure TargetCellStructure = obj as CellStructure;
+            if (this.GetString().Equals(TargetCellStructure.GetString()).Equals(false))
+            {
+                return false;
+            }
+            return true;
+        }
+
+    }
+}
