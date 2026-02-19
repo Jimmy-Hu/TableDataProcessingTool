@@ -151,7 +151,7 @@ namespace TableDataProcessingTool2.CSharpFiles
         }
 
         /// <summary>
-        /// 
+        /// SetCell method
         /// </summary>
         /// <param name="CellStructureInput"></param>
         /// <param name="LocationX"></param>
@@ -164,15 +164,17 @@ namespace TableDataProcessingTool2.CSharpFiles
         {
             try
             {
-                if (LocationX > GetBlockSizeX() || LocationY > GetBlockSizeY())
+                if ((int)LocationX > GetBlockSizeX() || (int)LocationY > GetBlockSizeY())
                 {
+                    Console.WriteLine("Out Of Boundary!");
                     return new Tuple<bool, BlockStructure>(false, this);
                 }
-                TableArray[LocationY * xsize + LocationX] = CellStructureInput;
+                TableArray[(int)LocationY * xsize + (int)LocationX] = CellStructureInput;
                 return new Tuple<bool, BlockStructure>(true, this);
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return new Tuple<bool, BlockStructure>(false, this);
             }
         }
