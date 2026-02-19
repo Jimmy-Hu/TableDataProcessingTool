@@ -277,7 +277,13 @@ namespace TableDataProcessingTool2.CSharpFiles
                 uint LoopNumberX = 0;
                 foreach (System.Data.DataColumn col in DataTableInput.Columns)//x
                 {
-                    BlockStructureObject = BlockStructureObject.SetCell(new CellStructure(row[col.ColumnName].ToString()), LoopNumberX, LoopNumberY).Item2;
+                    var Result = BlockStructureObject.SetCell(new CellStructure(row[col.ColumnName].ToString()), LoopNumberX, LoopNumberY);
+                    if (!Result.Item1)
+                    {
+                        Console.WriteLine($"Failed to set cell at ({LoopNumberX}, {LoopNumberY}): " + Result.Item2);
+                        throw new Exception($"Failed to set cell at ({LoopNumberX}, {LoopNumberY}): " + Result.Item2);
+                    }
+                    BlockStructureObject = Result.Item2;
                     LoopNumberX = LoopNumberX + 1;
                 }
                 LoopNumberY = LoopNumberY + 1;
