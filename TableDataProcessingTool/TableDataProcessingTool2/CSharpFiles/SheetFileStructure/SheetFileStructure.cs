@@ -440,6 +440,7 @@ namespace TableDataProcessingTool2.CSharpFiles
         }
 
         /// <summary>
+        /// WriteToBinaryFile method that serializes an object to a binary file using Protobuf-net.
         /// Writes the given object instance to a binary file.
         /// </summary>
         /// <typeparam name="T">The type of object being written to the XML file.</typeparam>
@@ -449,6 +450,8 @@ namespace TableDataProcessingTool2.CSharpFiles
         private static void WriteToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
         {
             var bytes = Serialize<T>(objectToWrite);
+            if (bytes == null) return; // Add safety check
+
             if (append)
             {
                 File.AppendAllBytes(filePath, bytes);
