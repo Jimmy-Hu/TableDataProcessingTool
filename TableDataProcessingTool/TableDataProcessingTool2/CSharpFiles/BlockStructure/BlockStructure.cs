@@ -37,8 +37,8 @@ namespace TableDataProcessingTool2.CSharpFiles
         {
             if (x > 0 && y > 0)
             {
-                xsize = x;
-                ysize = y;
+                xsize = (int)x;
+                ysize = (int)y;
                 for (int i = 0; i < x * y; i++)
                 {
                     TableArray.Add(new CellStructure(""));
@@ -50,8 +50,8 @@ namespace TableDataProcessingTool2.CSharpFiles
         {
             if (x > 0 && y > 0)
             {
-                xsize = x;
-                ysize = y;
+                xsize = (int)x;
+                ysize = (int)y;
                 for (int i = 0; i < x * y; i++)
                 {
                     TableArray.Add(InitialValue);
@@ -62,8 +62,8 @@ namespace TableDataProcessingTool2.CSharpFiles
         public BlockStructure(List<CellStructure> input, dynamic xsize_input, dynamic ysize_input)
         {
             TableArray = input;
-            xsize = xsize_input;
-            ysize = ysize_input;
+            xsize = (int)xsize_input;
+            ysize = (int)ysize_input;
         }
 
         public CellStructure GetCell(dynamic x, dynamic y)
