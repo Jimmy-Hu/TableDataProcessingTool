@@ -206,6 +206,7 @@ namespace TableDataProcessingTool2
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            this.ProcessingInfo.AppendText("All tasks finished." + System.Environment.NewLine);
             MessageBox.Show("All tasks finished.");
             textBox1.Text = "";
             BrowseFileButton.Enabled = true;
