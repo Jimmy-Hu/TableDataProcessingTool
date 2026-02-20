@@ -35,6 +35,7 @@ namespace TableDataProcessingTool2.CSharpFiles
             if (File.Exists(this.Filename))                        //    File is existed
             {
                 var TabelReadFromFile = ReadXLSXFile(this.Filename);
+                XLWorkbook? styleWorkbook = null;
                 for (int LoopNumberForTableCount = 0; LoopNumberForTableCount < TabelReadFromFile.Tables.Count; LoopNumberForTableCount++)
                 {
                     var NewSheetStructure = TableToSheetStructure((uint)LoopNumberForTableCount, TabelReadFromFile.Tables[LoopNumberForTableCount].TableName, TabelReadFromFile.Tables[LoopNumberForTableCount]);
