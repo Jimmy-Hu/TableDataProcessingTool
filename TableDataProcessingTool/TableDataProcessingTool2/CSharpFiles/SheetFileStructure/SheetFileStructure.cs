@@ -36,6 +36,8 @@ namespace TableDataProcessingTool2.CSharpFiles
             {
                 var TabelReadFromFile = ReadXLSXFile(this.Filename);
                 XLWorkbook? styleWorkbook = null;
+                bool isModernExcel = System.IO.Path.GetExtension(FilenameInput).Equals(".xlsx", StringComparison.OrdinalIgnoreCase) ||
+                                     System.IO.Path.GetExtension(FilenameInput).Equals(".xlsm", StringComparison.OrdinalIgnoreCase);
                 for (int LoopNumberForTableCount = 0; LoopNumberForTableCount < TabelReadFromFile.Tables.Count; LoopNumberForTableCount++)
                 {
                     var NewSheetStructure = TableToSheetStructure((uint)LoopNumberForTableCount, TabelReadFromFile.Tables[LoopNumberForTableCount].TableName, TabelReadFromFile.Tables[LoopNumberForTableCount]);
