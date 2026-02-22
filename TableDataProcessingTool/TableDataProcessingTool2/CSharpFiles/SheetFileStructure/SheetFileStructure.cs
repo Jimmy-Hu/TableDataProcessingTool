@@ -463,7 +463,11 @@ namespace TableDataProcessingTool2.CSharpFiles
         private static void WriteToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
         {
             var bytes = Serialize<T>(objectToWrite);
-            if (bytes == null) return; // Add safety check
+            if (bytes == null)
+            {
+                Console.WriteLine("Failed to serialize object to binary.");
+                return;
+            }
 
             if (append)
             {
