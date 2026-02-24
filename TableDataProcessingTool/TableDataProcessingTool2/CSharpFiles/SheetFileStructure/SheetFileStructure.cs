@@ -45,62 +45,45 @@ namespace TableDataProcessingTool2.CSharpFiles
                 for (int LoopNumberForTableCount = 0; LoopNumberForTableCount < TabelReadFromFile.Tables.Count; LoopNumberForTableCount++)
                 {
                     var NewSheetStructure = TableToSheetStructure((uint)LoopNumberForTableCount, TabelReadFromFile.Tables[LoopNumberForTableCount].TableName, TabelReadFromFile.Tables[LoopNumberForTableCount]);
-
                     #if _WINDOWS
-                    //    Read attributes of each cell
-                    FileInfo InputFileInfo = new FileInfo(FilenameInput);
-                    if (InputFileInfo.Extension.Equals(".xlsx") ||
-                        InputFileInfo.Extension.Equals(".xlsm") ||
-                        InputFileInfo.Extension.Equals(".xls"))
+                    //    Read attributes of each cell using ClosedXML instead of Interop
+                    if (styleWorkbook != null && styleWorkbook.TryGetWorksheet(NewSheetStructure.GetSheetName(), out var xlSheet))
                     {
-                        CSharpFiles.BlockStructure NewBlockStructure =
-                            NewSheetStructure.GetBlockStructure();
-                        
-                        //    Start a Excel application
-                        Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
-                        try
+                        CSharpFiles.BlockStructure NewBlockStructure = NewSheetStructure.GetBlockStructure();
+                        int sizeX = NewBlockStructure.GetBlockSizeX();
+                        int sizeY = NewBlockStructure.GetBlockSizeY();
+
+                        for (int x = 0; x < sizeX; x++)
                         {
-                            var ExcelWorkbook = ExcelApp.Workbooks.Open(
-                            FilenameInput
-                            );
-                            /*
-                            Parallel.For(0, NewBlockStructure.GetBlockSizeX(), (LoopNumberX, StateX) =>
+                            for (int y = 0; y < sizeY; y++)
                             {
-                                Parallel.For(0, NewBlockStructure.GetBlockSizeY(), (LoopNumberY, StateY) =>
+                                try
                                 {
-                                    System.Drawing.Color SystemDrawingColor =
-                                        GetBackgroundColor(ExcelWorkbook, NewSheetStructure.GetSheetName(), (uint)LoopNumberX, (uint)LoopNumberY);
-                                    NewBlockStructure.GetCell(LoopNumberX, LoopNumberY).SetBackGroundColor(XLColor.FromArgb(
-                                        SystemDrawingColor.A, SystemDrawingColor.R, SystemDrawingColor.G, SystemDrawingColor.B));
-                                });
-                            });
-                            */
-                            /*
-                            for (int LoopNumberX = 0; LoopNumberX < NewBlockStructure.GetBlockSizeX(); LoopNumberX++)
-                            {
-                                for (int LoopNumberY = 0; LoopNumberY < NewBlockStructure.GetBlockSizeY(); LoopNumberY++)
+                                    var cell = xlSheet.Cell(y + 1, x + 1);
+                                    var xlColor = cell.Style.Fill.BackgroundColor;
+
+                                    if (xlColor != XLColor.NoColor)
+                                    {
+                                        System.Drawing.Color sysColor = xlColor.Color;
+                                        NewBlockStructure.GetCell(x, y).SetBackGroundColor(
+                                            XLColor.FromArgb(sysColor.A, sysColor.R, sysColor.G, sysColor.B)
+                                        );
+                                    }
+                                }
+                                catch
                                 {
-                                    System.Drawing.Color SystemDrawingColor =
-                                        GetBackgroundColor(ExcelWorkbook, NewSheetStructure.GetSheetName(), (uint)LoopNumberX, (uint)LoopNumberY);
-                                    NewBlockStructure.GetCell(LoopNumberX, LoopNumberY).SetBackGroundColor(XLColor.FromArgb(
-                                        SystemDrawingColor.A, SystemDrawingColor.R, SystemDrawingColor.G, SystemDrawingColor.B));
+
                                 }
                             }
-                            */
-
-                            NewSheetStructure.SetBlockStructure(NewBlockStructure);
-                            ExcelWorkbook.Close(false);
-                            KillExcelApplication();
                         }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Excel program error!");
-                        }
-                        
+                        NewSheetStructure.SetBlockStructure(NewBlockStructure);
                     }
                     #endif
+                    
                     this.SheetStructures.Add(NewSheetStructure);
                 }
+
+                if (styleWorkbook != null) styleWorkbook.Dispose();
             }
         }
 
@@ -437,12 +420,17 @@ namespace TableDataProcessingTool2.CSharpFiles
             }
         }
 
-        public void Save(string Filename)
+        /// <summary>
+        /// Saves the SheetFileStructure data to a binary file.
+        /// Matches the structure expected by the constructor for .sheets2 files.
+        /// </summary>
+        /// <param name="OutputFilename">The path to save the file to.</param>
+        public void Save(string OutputFilename)
         {
-            WriteToBinaryFile<Tuple<string, List<SheetStructure>>>(
-                Filename,
-                new Tuple<string, List<SheetStructure>>(this.Filename, this.SheetStructures)
-                );
+            // The .sheets2 format expects a Tuple<string, List<SheetStructure>>
+            // based on the read logic in the constructor.
+            var dataToSave = new Tuple<string, List<SheetStructure>>(this.Filename, this.SheetStructures);
+            WriteToBinaryFile(OutputFilename, dataToSave);
         }
 
         public void Load(string Filename)
