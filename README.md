@@ -1,6 +1,7 @@
 # TableDataProcessingTool
 
 [![.NET CI](https://github.com/Jimmy-Hu/TableDataProcessingTool/actions/workflows/dotnet-ci.yml/badge.svg)](https://github.com/Jimmy-Hu/TableDataProcessingTool/actions/workflows/dotnet-ci.yml)
+
 TableDataProcessingTool is just like its name. It process table data and save it into ".sheets" file.
 
 ### Related CodeReview Questions
