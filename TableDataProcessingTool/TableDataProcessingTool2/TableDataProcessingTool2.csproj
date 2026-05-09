@@ -46,8 +46,8 @@
     <PackageReference Include="protobuf-net.Core" Version="3.3.0-g6785ecbb35" />
     <PackageReference Include="RBush.Signed" Version="4.0.0" />
     <PackageReference Include="System.ClientModel" Version="1.10.0" />
-    <PackageReference Include="System.IO.Packaging" Version="10.0.7" />
-    <PackageReference Include="System.Text.Json" Version="10.0.7" />
+    <PackageReference Include="System.IO.Packaging" Version="11.0.0-preview.3.26207.106" />
+    <PackageReference Include="System.Text.Json" Version="11.0.0-preview.3.26207.106" />
   </ItemGroup>
 
   <ItemGroup>
