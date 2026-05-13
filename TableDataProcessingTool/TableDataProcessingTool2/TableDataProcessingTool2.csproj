@@ -19,23 +19,23 @@
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.9.0-develop00565" />
     <PackageReference Include="ExcelNumberFormat" Version="1.1.0" />
     <PackageReference Include="Google.Protobuf" Version="3.35.0-rc2" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.Abstractions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="11.0.0-preview.3.26207.106" />
-    <PackageReference Include="Microsoft.Extensions.Primitives" Version="11.0.0-preview.3.26207.106" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.Abstractions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="11.0.0-preview.4.26230.115" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.84.0" />
     <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.84.0" />
     <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="8.18.0" />
