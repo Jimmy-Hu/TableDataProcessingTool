@@ -46,6 +46,7 @@
     <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.85.2" />
     <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="8.19.1" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="16.0.18925.20022" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="10.0.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.5-beta1" />
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
     <PackageReference Include="protobuf-net" Version="3.2.56" />
