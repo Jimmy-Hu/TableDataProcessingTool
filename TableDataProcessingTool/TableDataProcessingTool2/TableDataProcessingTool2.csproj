@@ -57,6 +57,7 @@
     <PackageReference Include="System.ClientModel" Version="1.14.0" />
     <PackageReference Include="System.Collections.Immutable" Version="10.0.9" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Composition" Version="10.0.9" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="11.0.0-preview.4.26230.115" />
     <PackageReference Include="System.Diagnostics.EventLog" Version="10.0.9" />
     <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
