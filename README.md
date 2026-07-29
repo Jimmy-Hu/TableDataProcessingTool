@@ -75,3 +75,4 @@ private static T ReadFromBinaryFile<T>(string filePath)
 However, the usage of `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter` for serializing / deserializing is obsolete and a new form of serializaton should be used. Therefore, the new project "TableDataProcessingTool2" is created.
 
 
+
