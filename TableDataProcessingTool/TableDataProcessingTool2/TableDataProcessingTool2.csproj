@@ -72,6 +72,7 @@
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="11.0.0-preview.4.26230.115" />
     <PackageReference Include="System.Diagnostics.EventLog" Version="10.0.10" />
     <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.10" />
     <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
     <PackageReference Include="System.IO.Packaging" Version="11.0.0-preview.4.26230.115" />
     <PackageReference Include="System.IO.Pipelines" Version="11.0.0-preview.4.26230.115" />
