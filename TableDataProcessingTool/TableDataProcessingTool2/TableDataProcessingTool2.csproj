@@ -56,6 +56,7 @@
     <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="8.22.0" />
     <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="16.0.18925.20022" />
+    <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="Microsoft.Win32.SystemEvents" Version="10.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.5-beta1" />
