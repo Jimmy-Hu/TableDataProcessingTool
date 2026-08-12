@@ -989,6 +989,9 @@ namespace TableDataProcessingTool2.CSharpFiles
             DataGridViewInput.Rows.Clear();
             DataGridViewInput.Columns.Clear();
 
+            // Disable Fill mode and set to None for better performance
+            DataGridViewInput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
             //    Construct Columns
             DataGridViewInput.ColumnCount = GetBlockSizeX();
             for (int ConstructColumns = 0; ConstructColumns < DataGridViewInput.ColumnCount; ConstructColumns++)
