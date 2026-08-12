@@ -191,6 +191,17 @@ namespace TableDataProcessingTool2
 
         #endregion
 
+        //  DataGridView_Main_ColumnAdded event handler implementation
+        private void DataGridView_Main_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            // Set FillWeight to the minimum valid value (1.0f).
+            // This extends the theoretical maximum limit to 65,535 columns.
+            e.Column.FillWeight = 1.0f;
+
+            // Ensure individual columns do not override the grid's auto-size mode
+            e.Column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+        }
+
         private void listBox_FileList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(listBox_FileList.GetItemText(listBox_FileList.SelectedItem)))
