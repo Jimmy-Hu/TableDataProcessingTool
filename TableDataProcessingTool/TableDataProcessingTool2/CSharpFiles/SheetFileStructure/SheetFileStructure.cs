@@ -19,6 +19,11 @@ namespace TableDataProcessingTool2.CSharpFiles
         [ProtoMember(2)]
         private List<SheetStructure> SheetStructures;
 
+        // Add a parameterless constructor for protobuf-net to use during deserialization
+        private SheetFileStructure()
+        {
+        }
+
         public SheetFileStructure(string FilenameInput)
         {
             //  Reference: https://stackoverflow.com/a/58074654/6667035
