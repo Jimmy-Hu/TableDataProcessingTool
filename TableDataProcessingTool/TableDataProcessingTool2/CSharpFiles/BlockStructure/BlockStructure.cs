@@ -986,6 +986,10 @@ namespace TableDataProcessingTool2.CSharpFiles
             DataGridViewInput.ClearSelection();
             DataGridViewInput.CurrentCell = null;
             DataGridViewInput.Enabled = false;
+
+            // Suspend layout logic to prevent UI rendering during massive updates
+            DataGridViewInput.SuspendLayout();
+
             DataGridViewInput.Rows.Clear();
             DataGridViewInput.Columns.Clear();
 
