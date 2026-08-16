@@ -1003,8 +1003,8 @@ namespace TableDataProcessingTool2.CSharpFiles
                 DataGridViewInput.Columns[ConstructColumns].Name = ConstructColumns.ToString();
             }
 
-            //    Update grids on UI (string)
-            for (uint y = 0; y < this.GetBlockSizeY(); y++)
+            // Update grids on UI and apply colors sequentially in the UI thread
+            for (uint y = 0; y < GetBlockSizeY(); y++)
             {
                 List<string> RowData = new List<string>();
                 for (uint x = 0; x < GetBlockSizeX(); x++)
