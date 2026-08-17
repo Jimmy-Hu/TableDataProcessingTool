@@ -1011,24 +1011,31 @@ namespace TableDataProcessingTool2.CSharpFiles
                 {
                     RowData.Add(GetCell(x, y).GetString());
                 }
-                DataGridViewInput.Rows.Add(RowData.ToArray());
-            }
 
-            var NewDataGridView = DataGridViewInput;
-            Parallel.For(0, GetBlockSizeY(), (y, StateY) =>
-            {
-                Parallel.For(0, GetBlockSizeX(), (x, StateX) =>
+                int rowIndex = DataGridViewInput.Rows.Add(RowData.ToArray());
+
+                // Apply colors immediately after row creation to avoid iterating the grid again
+                for (uint x = 0; x < GetBlockSizeX(); x++)
                 {
                     if (GetCell(x, y).IsBackGroundColorUsed())
                     {
-                        DataGridViewCell TargetCell = NewDataGridView.Rows[(int)y].Cells[(int)x];
                         XLColor xLColor = GetCell(x, y).GetBackGroundColor();
-                        TargetCell.Style.BackColor = System.Drawing.Color.FromArgb(
-                            xLColor.Color.ToArgb());
+                        System.Drawing.Color targetColor = System.Drawing.Color.FromArgb(xLColor.Color.ToArgb());
+
+                        // Force transparent or semi-transparent colors to be solid white 
+                        // to prevent GDI+ artifact issues during scrolling
+                        if (targetColor.A < 255 || targetColor == System.Drawing.Color.Transparent)
+                        {
+                            targetColor = System.Drawing.Color.White;
+                        }
+
+                        DataGridViewInput.Rows[rowIndex].Cells[(int)x].Style.BackColor = targetColor;
                     }
-                });
-            });
-            DataGridViewInput = NewDataGridView;
+                }
+            }
+
+            // Resume layout logic and force a clean repaint
+            DataGridViewInput.ResumeLayout();
             DataGridViewInput.Enabled = true;
         }
 
