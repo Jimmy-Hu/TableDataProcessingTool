@@ -15,6 +15,12 @@ namespace TableDataProcessingTool2
         {
             InitializeComponent();
 
+            // Disable Fill mode and set to None for better performance
+            dataGridView_Main.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+            // Intercept column creation to modify FillWeight dynamically
+            dataGridView_Main.ColumnAdded += DataGridView_Main_ColumnAdded;
+
             var titleItem_File = new System.Windows.Forms.ToolStripMenuItem()
             {
                 Name = "File",
