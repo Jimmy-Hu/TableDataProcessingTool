@@ -3,5 +3,6 @@
     partial class EnhancedPictureBox
     {
         /// <summary> 
+        /// Required designer variable.
     }
 }
