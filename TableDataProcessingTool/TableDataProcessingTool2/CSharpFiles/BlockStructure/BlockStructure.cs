@@ -1,6 +1,7 @@
 ﻿using ClosedXML.Excel;
 using ProtoBuf;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -425,27 +426,27 @@ namespace TableDataProcessingTool2.CSharpFiles
         /// </returns>
         public Tuple<int, List<Tuple<uint, uint>>> Contains(string TargetString)
         {
-            var TargetObjectLocation = new List<Tuple<uint, uint>>();
+            var targetBag = new ConcurrentBag<Tuple<uint, uint>>();
+            int sizeY = this.GetBlockSizeY();
+            int sizeX = this.GetBlockSizeX();
 
-            Parallel.For(0, this.GetBlockSizeY(), (y, state) =>
+            Parallel.For(0, sizeY, y =>
             {
-                for (uint x = 0; x < this.GetBlockSizeX(); x++)
+                for (uint x = 0; x < sizeX; x++)
                 {
-                    try
+                    if (this.GetCell(x, (uint)y).GetString().Contains(TargetString))
                     {
-                        if (this.GetCell(x, y).GetString().Contains(TargetString))
-                        {
-                            TargetObjectLocation.Add(new Tuple<uint, uint>(x, (uint)y));
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-
+                        targetBag.Add(new Tuple<uint, uint>(x, (uint)y));
                     }
                 }
             });
 
-            return new Tuple<int, List<Tuple<uint, uint>>>(TargetObjectLocation.Count, TargetObjectLocation);
+            var targetLocations = targetBag
+                .OrderBy(loc => loc.Item2)
+                .ThenBy(loc => loc.Item1)
+                .ToList();
+
+            return new Tuple<int, List<Tuple<uint, uint>>>(targetLocations.Count, targetLocations);
         }
 
         public int Count()
