@@ -1139,34 +1139,27 @@ namespace TableDataProcessingTool2.CSharpFiles
         /// </returns>
         public Tuple<int, List<Tuple<uint, uint>>> Find(string TargetString)
         {
-            var TargetObjectLocation = new List<Tuple<uint, uint>>();
-            if (false)               //    Use serial method
+            var targetBag = new ConcurrentBag<Tuple<uint, uint>>();
+            int sizeY = GetBlockSizeY();
+            int sizeX = GetBlockSizeX();
+
+            Parallel.For(0, sizeY, y =>
             {
-                for (int y = 0; y < GetBlockSizeY(); y++)
+                for (uint x = 0; x < sizeX; x++)
                 {
-                    for (uint x = 0; x < GetBlockSizeX(); x++)
+                    if (GetCell(x, (uint)y).GetString().Equals(TargetString))
                     {
-                        if (GetCell(x, y).GetString().Equals(TargetString))
-                        {
-                            TargetObjectLocation.Add(new Tuple<uint, uint>(x, (uint)y));
-                        }
+                        targetBag.Add(new Tuple<uint, uint>(x, (uint)y));
                     }
                 }
-            }
-            else
-            {
-                Parallel.For(0, GetBlockSizeY(), (y, state) =>
-                {
-                    for (uint x = 0; x < GetBlockSizeX(); x++)
-                    {
-                        if (GetCell(x, y).GetString().Equals(TargetString))
-                        {
-                            TargetObjectLocation.Add(new Tuple<uint, uint>(x, (uint)y));
-                        }
-                    }
-                });
-            }
-            return new Tuple<int, List<Tuple<uint, uint>>>(TargetObjectLocation.Count, TargetObjectLocation);
+            });
+
+            var targetLocations = targetBag
+                .OrderBy(loc => loc.Item2)
+                .ThenBy(loc => loc.Item1)
+                .ToList();
+
+            return new Tuple<int, List<Tuple<uint, uint>>>(targetLocations.Count, targetLocations);
         }
 
 
