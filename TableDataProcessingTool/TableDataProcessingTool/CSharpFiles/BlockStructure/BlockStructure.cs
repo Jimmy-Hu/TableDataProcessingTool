@@ -21,7 +21,25 @@ namespace TableDataProcessingTool.CSharpFiles
 
         public BlockStructure(BlockStructure BlockStructureInput)
         {
-            this.TableArray = BlockStructureInput.TableArray;
+            if (BlockStructureInput == null || BlockStructureInput.TableArray == null)
+            {
+                this.TableArray = Array.CreateInstance(typeof(CellStructure), 1, 1);
+                return;
+            }
+            int len0 = BlockStructureInput.TableArray.GetLength(0);
+            int len1 = BlockStructureInput.TableArray.GetLength(1);
+            this.TableArray = Array.CreateInstance(typeof(CellStructure), len0, len1);
+            for (int x = 0; x < len0; x++)
+            {
+                for (int y = 0; y < len1; y++)
+                {
+                    CellStructure existing = (CellStructure)BlockStructureInput.TableArray.GetValue(x, y);
+                    if (existing != null)
+                    {
+                        this.TableArray.SetValue(new CellStructure(existing), x, y);
+                    }
+                }
+            }
         }
 
         //    Is generic constructor in non-generic class supported?
