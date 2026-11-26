@@ -1106,7 +1106,7 @@ namespace TableDataProcessingTool.CSharpFiles
             {
                 Parallel.For(0, BlockStructureInput.GetBlockSizeX(), (LoopNumberX, stateX) =>
                 {
-                    ReturnObject.SetCell(BlockStructureInput.GetCell(LoopNumberX, LoopNumberY).SetBackGroundColor(NewBackGroundColor), LoopNumberX + this.GetBlockSizeX(), LoopNumberY);
+                    ReturnObject.SetCell(new CellStructure(BlockStructureInput.GetCell(LoopNumberX, LoopNumberY)).SetBackGroundColor(NewBackGroundColor), LoopNumberX + this.GetBlockSizeX(), LoopNumberY);
                 });
             });
 
