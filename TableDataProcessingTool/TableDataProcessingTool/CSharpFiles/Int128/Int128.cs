@@ -149,20 +149,18 @@ namespace TableDataProcessingTool.CSharpFiles.Int128
         {
             Low = 0;
             High = 0;
-            var low = new byte[8];
-            var high = new byte[8];
-            if (bytes.Length > 0 && bytes.Length <= 8)
+            if (bytes == null || bytes.Length == 0)
             {
-                Buffer.BlockCopy(bytes, 0, low, 0, bytes.Length);
-                Low = BitConverter.ToUInt64(low, 0);
+                return;
             }
-            else if (bytes.Length > 8)
+            byte fill = (bytes[bytes.Length - 1] & 0x80) != 0 ? (byte)0xFF : (byte)0x00;
+            var full = new byte[16];
+            for (int i = 0; i < 16; i++)
             {
-                Buffer.BlockCopy(bytes, 0, low, 0, 8);
-                Buffer.BlockCopy(bytes, 8, high, 0, bytes.Length - 8);
-                Low = BitConverter.ToUInt64(low, 0);
-                High = BitConverter.ToInt64(high, 0);
+                full[i] = i < bytes.Length ? bytes[i] : fill;
             }
+            Low = BitConverter.ToUInt64(full, 0);
+            High = BitConverter.ToInt64(full, 8);
         }
 
         public override bool Equals(object obj)
