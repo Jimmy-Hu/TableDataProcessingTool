@@ -1130,7 +1130,7 @@ namespace TableDataProcessingTool.CSharpFiles
 
         public BlockStructure ConcatenateHorizontalInverse(BlockStructure BlockStructureInput, bool EnhancedMode = true)
         {
-            return BlockStructureInput.ConcatenateHorizontal(this, true);
+            return BlockStructureInput.ConcatenateHorizontal(this, EnhancedMode);
         }
 
         public BlockStructure ConcatenateVertical(BlockStructure BlockStructureInput)
